@@ -31,7 +31,7 @@ router.get("/:id", (req: Request, res: Response) => {
   const id = req.params.id;
   const numID = Number(id);
   // using find function for matching the id
-  const new_data: details = data.find((el) => el.id === numID);
+  const new_data = data.find((el) => el.id === numID);
   // using if else , as if there is any error we can send a response
   if (new_data) {
     res.status(200).set("content-type", "application/json").send(new_data);

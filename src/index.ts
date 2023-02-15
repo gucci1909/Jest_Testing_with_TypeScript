@@ -5,7 +5,7 @@ import { router } from "./routes/crud";
 // making app to express();
 const app: Application = express();
 // making a port number
-const PORT: number = +process.env.PORT || 3000;
+const PORT: number = 3000;
 
 // using express.json() for post request
 app.use(express.json());
@@ -17,3 +17,5 @@ app.use("/testing_router", router);
 app.listen(PORT, (): void => {
   console.log(`http://localhost:${PORT}`);
 });
+
+export {app};

@@ -35,7 +35,7 @@ const path_1 = __importDefault(require("path"));
 const data_json_1 = __importDefault(require("../data.json"));
 const router = (0, express_1.Router)();
 exports.router = router;
-const outputPath = path_1.default.join(__dirname, '../data.json');
+const outputPath = path_1.default.join(__dirname, "../data.json");
 // Route get method
 router.get("/", (req, res) => {
     // writing if else for making a jest test case according to the situation
@@ -88,10 +88,7 @@ router.delete("/:id", (req, res) => {
 });
 router.post("/", (req, res) => {
     // taking out object from req
-    let new_data = {
-        ...req.body,
-        id: Date.now(),
-    };
+    let new_data = Object.assign(Object.assign({}, req.body), { id: Date.now() });
     // pushing the new_data into data
     data_json_1.default.push(new_data);
     // writingFile with use of fs
